@@ -10,10 +10,12 @@
 
 /* css TOC: 
     GLOBAL -- line 
-    MAIN NAV -- line 
-    MENU -- line
-    DESCRIPTION -- line
-    RECIPE -- line
+        HIDDEN ELEMENTS -- line
+    NAV + HEADER -- line 
+    MAIN -- line
+        MENU -- line
+        DESCRIPTION -- line
+        RECIPE -- line
     ASIDE -- line
     FOOTER -- line 
     CLASSES -- line 
@@ -54,10 +56,12 @@
 
     p, dd, dt, li, nav, input {
         font-size: 16px;
+        margin: 0;
+        padding: 0;
     }
 
     /* ----- hidden elements ----- */
-    h1, nav h2, header h3, nav img, #logo, #avatar, main h3, aside dt:first-child, aside dd:last-child, footer h3, footer h4 {
+    h1, nav h2, header h3, nav img, #logo, #avatar, main h3, footer h2, footer h3, footer h4 {
         visibility: hidden;
         height: 0;
         width: 0;
@@ -65,18 +69,12 @@
         padding: 0;
     }
 
-/* ---------- MAIN NAV + HEADER ---------- */
+/* ---------- NAV + HEADER ---------- */
     nav {
         position: absolute;
         top: 0;
         z-index: 5;
         width: 414px;
-    }
-
-    #search {
-        position: absolute;
-        top: 100px;
-        left: 150px;
     }
 
     nav a {
@@ -109,7 +107,7 @@
     }
 
     /* --------------------- FIX CODE BELOW --------------------- */
-    /*--I need to stop wasting time on this--*/
+        /*--I need to stop wasting time on this--*/
     label:hover {
         background: #FE9374;
     }
@@ -149,58 +147,136 @@
 
     #search {
         display: grid;
-        grid-template-columns: 0 3fr 1fr;
-    }
-    
-/* ---------- MENU ---------- */
-    #menu a {
-        text-decoration: none;
-        color: #EB5428;
+        grid-template-columns: 1.25fr 5fr 1fr;
+        position: absolute;
+        top: 70px;
     }
 
-    #menu svg {
-        width: 80%;
-        padding-bottom: 0;
+/* ---------- MAIN ---------- */ 
+    main h2:first-child {
+        font-size: 40px;
     }
 
-    #menu span {
-        padding-top: 0;
-    }
+    /* ---------- MENU ---------- */
+        #menu a {
+            text-decoration: none;
+            color: #EB5428;
+        }
 
-    #menu ul {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        list-style: none;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
+        #menu svg {
+            width: 80%;
+            padding-bottom: 0;
+        }
 
-    #menu svg:hover {
-        stroke: #ffffff;
-        background: #EB5428;
-    }
+        #menu span {
+            padding-top: 0;
+        }
 
-    #menu a:hover {
-        color: #ffffff;
-        background: #EB5428;
-    }
+        #menu ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-/* ---------- DESCRIPTION ---------- */
-    #description img {
-        width: 100%;
-    }
+        #menu svg:hover {
+            stroke: #ffffff;
+            background: #EB5428;
+        }
 
-/* ---------- RECIPE ---------- */
-    #recipe h4 {
-        font-size: 25px;
-        margin-bottom: 0;
-        text-align: center;
-    }
+        #menu a:hover {
+            color: #ffffff;
+            background: #EB5428;
+        }
+
+    /* ---------- DESCRIPTION ---------- */
+        #description p {
+            margin: 2%;
+        }
+
+        #description p~p {
+            margin-top: 20px;
+        }
+
+        #description img {
+            width: 100%;
+        }
+
+    /* ---------- RECIPE ---------- */
+        #recipe {
+            margin: 2%;
+        }
+
+        #recipe h4 {
+            font-size: 25px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        #details dt, #details dd {
+            display: inline-block;
+            margin: 0;
+        }
+
+        #details dt {
+            font-weight: 700;
+        }
+
+        ol > li::marker {
+            font-weight: 700;
+        }
 
 /* ---------- ASIDE ---------- */
     aside {
         background-color: #7ABFBF;
+        padding: 1% 2%;
+    }
+
+    aside h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    aside section {
+        display: grid;
+        grid-template-areas: 
+            "image name name name"
+            "image desc desc desc"
+            "image rating rating rating"
+            "image stars stars stars";
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 5px;
+        margin: 20px;
+    }
+
+    .name {
+        grid-area: name;
+    }
+
+    .desc {
+        grid-area: desc;
+    }
+
+    .rating {
+        grid-area: rating;
+        font-weight: 700;
+    }
+
+    .stars {
+        grid-area: stars;
+    }
+
+    .image {
+        grid-area:image;
+        padding-top: 10%;
+        padding-left: 5%;
+    }
+
+    aside img {
+        width: 100%;
     }
 
     aside section:hover {
@@ -239,7 +315,6 @@
     #copy {
         text-align: center;
     }
-
 
 /* ---------- CLASSES ---------- */
 
