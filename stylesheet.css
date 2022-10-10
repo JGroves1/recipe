@@ -42,7 +42,7 @@
         margin-top: 150px;
     }
 
-    h2, h3, h4, nav, #menu, footer {
+    h2, h3, h4, header a, #menu, footer {
         font-family: 'Bebas Neue', cursive;
     }
 
@@ -54,7 +54,7 @@
     h3 {
         font-size: 25px;
     }
-    nav a, nav span, figcaption, #menu li, #connect li, footer {
+    header a, nav span, figcaption, #menu li, #connect li, footer {
         font-size: 20px;
     }
 
@@ -65,7 +65,7 @@
     }
 
     /* ----- hidden elements ----- */
-    h1, nav h2, header h3, nav img, #logo span, main h3, footer h2, footer h3, footer h4 {
+    h1, header h2, header h3, nav img, #logo span, main h3, footer h2, footer h3, footer h4 {
         visibility: hidden;
         height: 0;
         width: 0;
@@ -79,11 +79,16 @@
         grid-template-areas: 
             "burger logo logo logo avatar"
             ". search search search .";
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(5, 74px);
+        grid-template-rows: repeat(2, 75px);
+        grid-gap: 10px;
+        width: 414px;
         position: absolute;
         top: 0;
         z-index: 5;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
         /* --- grid placements --- */
@@ -94,6 +99,7 @@
 
         #logo {
             grid-area: logo;
+            background-color: #EB5428;
         }
 
         #avatar {
@@ -108,7 +114,7 @@
         width: 414px;
     }
 
-    nav a {
+    header a {
         text-decoration: none;
         color: #EB5428;
         display: block;
@@ -181,8 +187,6 @@
     #search {
         display: grid;
         grid-template-columns: 1.25fr 5fr 1fr;
-        position: absolute;
-        top: 70px;
     }
 
 /* ---------- MAIN ---------- */ 
