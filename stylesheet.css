@@ -37,6 +37,7 @@
     }
 
  /* --------------------- FIX CODE BELOW --------------------- */
+    /* -- this is very not how I want to do this --*/
     main {
         margin-top: 150px;
     }
@@ -53,6 +54,9 @@
     h3 {
         font-size: 25px;
     }
+    nav a, nav span, figcaption, #menu li, #connect li, footer {
+        font-size: 20px;
+    }
 
     p, dd, dt, li, nav, input {
         font-size: 16px;
@@ -61,7 +65,7 @@
     }
 
     /* ----- hidden elements ----- */
-    h1, nav h2, header h3, nav img, #logo, #avatar, main h3, footer h2, footer h3, footer h4 {
+    h1, nav h2, header h3, nav img, #logo span, main h3, footer h2, footer h3, footer h4 {
         visibility: hidden;
         height: 0;
         width: 0;
@@ -70,16 +74,45 @@
     }
 
 /* ---------- NAV + HEADER ---------- */
-    nav {
+    header {
+        display: grid;
+        grid-template-areas: 
+            "burger logo logo logo avatar"
+            ". search search search .";
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         position: absolute;
         top: 0;
         z-index: 5;
+    }
+
+        /* --- grid placements --- */
+
+        #burger {
+            grid-area: burger;
+        }
+
+        #logo {
+            grid-area: logo;
+        }
+
+        #avatar {
+            grid-area: avatar;
+        }
+
+        #search {
+            grid-area: search;
+        }
+
+    nav {
         width: 414px;
     }
 
     nav a {
         text-decoration: none;
         color: #EB5428;
+        display: block;
+        padding: 2%;
     }
 
     nav a:hover {
@@ -181,6 +214,8 @@
             padding: 0;
         }
 
+/* --------------------- FIX CODE BELOW --------------------- */
+    /* -- I want this to be prettier --*/
         #menu svg:hover {
             stroke: #ffffff;
             background: #EB5428;
@@ -215,13 +250,18 @@
             text-align: center;
         }
 
-        #details dt, #details dd {
-            display: inline-block;
-            margin: 0;
+        #details dl {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
 
         #details dt {
             font-weight: 700;
+            grid-column-start: 1;
+        }
+
+        #details dd {
+            grid-column-start: 2;
         }
 
         ol > li::marker {
@@ -297,6 +337,8 @@
         padding: 0;
     }
 
+/* --------------------- FIX CODE BELOW --------------------- */
+    /* -- I want this to be prettier --*/
     footer a:hover {
         background-color: #EB5428;
         color: #ffffff;
