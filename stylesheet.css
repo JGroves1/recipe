@@ -42,7 +42,7 @@
         margin-top: 150px;
     }
 
-    h2, h3, h4, header a, #menu, footer {
+    h2, h3, h4, header a, #burger, #menu, footer {
         font-family: 'Bebas Neue', cursive;
     }
 
@@ -54,7 +54,7 @@
     h3 {
         font-size: 25px;
     }
-    header a, nav span, figcaption, #menu li, #connect li, footer {
+    header a, #burger, nav span, figcaption, #menu li, #connect li, footer {
         font-size: 20px;
     }
 
@@ -95,6 +95,7 @@
 
         #burger {
             grid-area: burger;
+            color: #EB5428;
         }
 
         #logo {
@@ -104,6 +105,7 @@
 
         #avatar {
             grid-area: avatar;
+            padding-top: 10%;
         }
 
         #search {
