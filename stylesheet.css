@@ -24,6 +24,7 @@
 /* ---------- GLOBAL ---------- */
     html {
         background-color: rgba(122, 191, 191, 0.5);
+        color: #0D0D0D;
     }
 
     body {
@@ -33,25 +34,156 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    h2, h3, h4, nav, footer {
+ /* --------------------- FIX CODE BELOW --------------------- */
+    main {
+        margin-top: 150px;
+    }
+
+    h2, h3, h4, nav, #menu, footer {
         font-family: 'Bebas Neue', cursive;
     }
 
-/* ---------- MAIN NAV + HEADER ---------- */
-    h1 {
+    h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    p, dd, dt, li, nav, input {
+        font-size: 16px;
+    }
+
+    /* ----- hidden elements ----- */
+    h1, nav h2, header h3, nav img, #logo, #avatar, main h3, aside dt:first-child, aside dd:last-child, footer h3, footer h4 {
         visibility: hidden;
         height: 0;
+        width: 0;
         margin: 0;
         padding: 0;
     }
 
-    nav img {
-        width: 15%;
+/* ---------- MAIN NAV + HEADER ---------- */
+    nav {
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        width: 414px;
     }
 
-/* ---------- MENU ---------- */
-    #menu {
+    #search {
+        position: absolute;
+        top: 100px;
+        left: 150px;
+    }
 
+    nav a {
+        text-decoration: none;
+        color: #EB5428;
+    }
+
+    nav a:hover {
+        color: #ffffff;
+        background-color: #EB5428;
+    }
+
+    nav ul {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #ffffff;
+        max-height: 0;
+        transition: max-height .5s ease-out;
+    }
+
+    label {
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+        user-select: none;
+    }
+
+    /* --------------------- FIX CODE BELOW --------------------- */
+    /*--I need to stop wasting time on this--*/
+    label:hover {
+        background: #FE9374;
+    }
+
+    label span {
+        display: block;
+        height: 40px;
+        position: relative;
+    }
+
+    [type="checkbox"] {
+        display: none;
+    }
+
+    input:checked ~ ul {
+        max-height: 500px;
+    }
+
+    input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+        top: 0;
+    }
+
+    [type="text"] {
+        border: #EB5428 solid 3px;
+        height: 40px;
+    }
+
+    ::placeholder {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    #search svg {
+        padding: 0;
+        margin: 0;
+        border: #EB5428 solid 4px;
+    }
+
+    #search {
+        display: grid;
+        grid-template-columns: 0 3fr 1fr;
+    }
+    
+/* ---------- MENU ---------- */
+    #menu a {
+        text-decoration: none;
+        color: #EB5428;
+    }
+
+    #menu svg {
+        width: 80%;
+        padding-bottom: 0;
+    }
+
+    #menu span {
+        padding-top: 0;
+    }
+
+    #menu ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu svg:hover {
+        stroke: #ffffff;
+        background: #EB5428;
+    }
+
+    #menu a:hover {
+        color: #ffffff;
+        background: #EB5428;
     }
 
 /* ---------- DESCRIPTION ---------- */
@@ -60,16 +192,54 @@
     }
 
 /* ---------- RECIPE ---------- */
-
+    #recipe h4 {
+        font-size: 25px;
+        margin-bottom: 0;
+        text-align: center;
+    }
 
 /* ---------- ASIDE ---------- */
+    aside {
+        background-color: #7ABFBF;
+    }
 
+    aside section:hover {
+        background-color: #FE9374;
+    }
 
 /* ---------- FOOTER ---------- */
+    footer a {
+        text-decoration: none;
+        color: #EB5428;
+    }
+
+    footer ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+        padding: 0;
+    }
+
+    footer a:hover {
+        background-color: #EB5428;
+        color: #ffffff;
+    }
+
+    footer svg:hover {
+        stroke: #ffffff;
+        background-color: #EB5428;
+    }
 
     footer img {
         width: 40%;
+        margin-left: 30%;
     }
+
+    #copy {
+        text-align: center;
+    }
+
 
 /* ---------- CLASSES ---------- */
 
